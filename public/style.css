@@ -1,0 +1,83 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e9eef5;
+}
+
+.container{
+    width: 450px;
+    height: 400px;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    position: absolute;
+    top: 25%;
+    left: 33%;
+    box-shadow: 5px 40px 30px rgba(19,56,106,0.4);
+}
+.admin{
+    float: left;
+    color: #58a2ed;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px 40px;
+}
+.continue{
+    float: right;
+    text-align: left;
+    color: rgba(211,219,219,1.00);
+    font-size: 12px;
+    margin: 10px 40px;
+}
+.tit h1{
+    text-shadow: 2px 2px black;
+    font-weight: 800;
+}
+.tit{
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    left: 33%;
+    color: #505666;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e9eef5;
+    text-align: center;
+}
+form{
+    text-align: center;
+    margin-top: 40px;
+}
+.fix{
+    clear:both
+}
+.inputbox input{
+    height:45px;
+    width: 200px;
+    border:1px solid #eaedf4;
+    border-radius: 18px;
+    font-size: 11px;
+    color: #505666;
+    padding: 0px 15px;
+    outline: none;
+}
+#submit{
+    margin: 35px 0px 0px 0px;
+    width: 20%;
+    height: 38px;
+    border-radius: 18px;
+    color: #FFFFFF;
+    background-color: #2091eb;
+}
+#submit:hover{
+background-color: rgba(219,33,103,1.00);
+transition: all ease 0.5s;
+}
+
+.inputbox p{
+    margin: 30px 0px 6px -40px;
+    font-size: 15px;
+    /* font-weight: 300; */
+    color: #505666;
+}
+

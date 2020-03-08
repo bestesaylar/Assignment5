@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Selfie App</title>
+</head>
+<body>
+    <script>
+    if('geolocation'in navigator){
+    console.log('geolocation available');
+    navigator.geolocation.getCurrentPosition(async position=>{
+    const lat=position.coords.latitude;
+    const lon=position.coords.longitude;
+    document.getElementById('latitude').textContent=lat;
+    document.getElementById('longitude').textContent=lon;
+    // console.log(position);
+
+    const data = { lat ,lon };
+    const options = {
+        method:'POST',
+        headers:{
+    'Content-Type':'application/json'
+    },
+    body: JSON.stringify(data)
+    };
+    const response= await fetch('/api', options);
+    const json=await response.json();
+    console.log(json);
+    });
+    }else{
+        console.log('geolocation not availble');
+    }
+    </script>
+    <h1>Data Selfie App</h1>
+    <p>latitude:<span id="latitude"></span>&deg;<br/>
+    <p>longitude:<span id="longitude">&deg;</span>
+    </p>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body>
+    <div class="tit">
+        <h1>MOODY</h1>
+        <h2>What is your mood at the moment?</h2>
+    </div>
+      <div class="container">
+          <p class="admin">I FEEL ...</p>
+          <p class="continue">latitude: <span id="latitude"></span>&deg;<br />
+            longitude: <span id="longitude"></span>&deg;</p>
+    <div class="fix"></div>
+<div class="inputbox">
+<form>
+<p class="heading">Name</p>
+<input id="name" placeholder="John"/>
+<p class="heading">Mood</p>
+<!-- <input type="mood" placeholder="Happy"/><br>
+<input type="buton" value="submit"> -->
+<label for="vegetable"></label>
+<input id="vegetable" value="Happy" /><br>
+<button id="submit" formaction="all.html">submit</button>
+
+</div>
+    <!-- <p> -->
+      <!-- latitude: <span id="latitude"></span>&deg;<br />
+      longitude: <span id="longitude"></span>&deg; -->
+    <!-- </p> -->
+    <!-- <label for="vegetable">How do you feel?</label>
+    <input id="vegetable" value="arugula" /> -->
+
+    <!-- <button id="submit">submit</button> -->
+    <script>
+      let lat, lon;
+      const button = document.getElementById('submit');
+      button.addEventListener('click', async event => {
+        const vegetable = document.getElementById('vegetable').value;
+        const data = { lat, lon, vegetable };
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        };
+        const response = await fetch('/api', options);
+        const json = await response.json();
+        console.log(json);
+      });
+
+      if ('geolocation' in navigator) {
+        console.log('geolocation available');
+        navigator.geolocation.getCurrentPosition(async position => {
+          lat = position.coords.latitude;
+          lon = position.coords.longitude;
+          document.getElementById('latitude').textContent = lat;
+          document.getElementById('longitude').textContent = lon;
+        });
+      } else {
+        console.log('geolocation not available');
+      }
+    </script>
+  </body>
+</html>
